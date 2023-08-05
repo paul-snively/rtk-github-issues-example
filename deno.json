@@ -1,0 +1,9 @@
+{
+  "tasks": {
+    "start": "deno run --allow-run --allow-env --allow-read npm:react-scripts@3.2.0/react-scripts --openssl-legacy-provider start",
+    "build": "deno run --allow-run --allow-env --allow-read npm:react-scripts@3.2.0/react-scripts build",
+    "test": "deno run --allow-run --allow-env --allow-read npm:react-scripts@3.2.0/react-scripts test",
+    "eject": "deno run --allow-run --allow-env --allow-read npm:react-scripts@3.2.0/react-scripts eject",
+    "format": "prettier --write \"src/**/*\""
+  }
+}
