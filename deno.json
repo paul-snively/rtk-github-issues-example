@@ -1,9 +1,8 @@
 {
   "tasks": {
-    "start": "deno run --allow-run --allow-env --allow-read npm:react-scripts@3.2.0/react-scripts --openssl-legacy-provider start",
-    "build": "deno run --allow-run --allow-env --allow-read npm:react-scripts@3.2.0/react-scripts build",
-    "test": "deno run --allow-run --allow-env --allow-read npm:react-scripts@3.2.0/react-scripts test",
-    "eject": "deno run --allow-run --allow-env --allow-read npm:react-scripts@3.2.0/react-scripts eject",
-    "format": "prettier --write \"src/**/*\""
+    "dev": "deno run -A --node-modules-dir npm:vite serve public",
+    "build": "deno run -A --node-modules-dir npm:vite build",
+    "preview": "deno run -A --node-modules-dir npm:vite preview",
+    "serve": "deno run --allow-net --allow-read https://deno.land/std@0.157.0/http/file_server.ts dist/"
   }
 }
