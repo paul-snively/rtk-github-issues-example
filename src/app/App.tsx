@@ -13,7 +13,9 @@ import {
   setCurrentPage
 } from '../features/issuesDisplay/issuesDisplaySlice.ts'
 
-import './App.css'
+import useAsset from 'ultra/hooks/use-asset.js'
+
+<link rel="stylesheet" href={useAsset('./App.css')} />
 
 type CurrentDisplay =
   | {

@@ -3,17 +3,18 @@ import { useSelector, useDispatch, shallowEqual } from 'react-redux'
 import ReactMarkdown from 'react-markdown'
 import classnames from 'classnames'
 
-import { insertMentionLinks } from 'utils/stringUtils'
-import { IssueLabels } from 'components/IssueLabels'
-import { RootState } from 'app/rootReducer'
-import { fetchIssue } from 'features/issuesList/issuesSlice'
+import { insertMentionLinks } from '../../utils/stringUtils.ts'
+import { IssueLabels } from '../../components/IssueLabels.tsx'
+import { RootState } from '../../app/rootReducer.ts'
+import { fetchIssue } from '../../features/issuesList/issuesSlice.ts'
 
-import { IssueMeta } from './IssueMeta'
-import { IssueComments } from './IssueComments'
-import { fetchComments } from './commentsSlice'
+import { IssueMeta } from './IssueMeta.tsx'
+import { IssueComments } from './IssueComments.tsx'
+import { fetchComments } from './commentsSlice.ts'
 
-import styles from './IssueDetailsPage.module.css'
-import './IssueDetailsPage.css'
+import useAsset from 'ultra/hooks/use-asset.js'
+
+<link rel="stylesheet" href={useAsset('IssueDetailsPage.module.css')} />
 
 interface IDProps {
   org: string

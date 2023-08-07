@@ -1,10 +1,12 @@
 import React from 'react'
 import classnames from 'classnames'
 
-import { Issue } from 'api/githubAPI'
-import { UserWithAvatar } from 'components/UserWithAvatar'
+import { Issue } from '../../api/githubAPI.tsx'
+import { UserWithAvatar } from '../../components/UserWithAvatar.tsx'
 
-import styles from './IssueMeta.module.css'
+import useAsset from 'ultra/hooks/use-asset.js'
+
+<link rel="stylesheet" href={useAsset('IssueMeta.module.css')} />
 
 interface IssueProps {
   issue: Issue
