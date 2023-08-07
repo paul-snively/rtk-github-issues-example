@@ -1,8 +1,10 @@
 import React from 'react'
 import classnames from 'classnames'
+import useAsset from 'ultra/hooks/use-asset.js'
 
-import { User } from 'api/githubAPI'
-import styles from './UserWithAvatar.module.css'
+import { User } from '../api/githubAPI.tsx'
+
+<link rel="stylesheet" href={useAsset('UserWithAvatar.module.css')} />
 
 interface UserAvatarProps {
   user: User

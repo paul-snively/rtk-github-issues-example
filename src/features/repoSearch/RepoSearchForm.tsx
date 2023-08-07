@@ -1,7 +1,8 @@
 import React, { useState, ChangeEvent } from 'react'
+import useAsset from 'ultra/hooks/use-asset.js'
 
-import './pure-forms.css'
-import './pure-buttons.css'
+<link rel="stylesheet" href={useAsset('pure-forms.css')} />
+<link rel="stylesheet" href={useAsset('pure-buttons.css')} />
 
 interface Props {
   org: string

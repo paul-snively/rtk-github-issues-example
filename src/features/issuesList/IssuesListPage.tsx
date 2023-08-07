@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
-import { fetchIssuesCount } from 'features/repoSearch/repoDetailsSlice'
-import { RootState } from 'app/rootReducer'
+import { fetchIssuesCount } from '../../features/repoSearch/repoDetailsSlice.ts'
+import { RootState } from '../../app/rootReducer.ts'
 
-import { IssuesPageHeader } from './IssuesPageHeader'
-import { IssuesList } from './IssuesList'
-import { IssuePagination, OnPageChangeCallback } from './IssuePagination'
-import { fetchIssues } from './issuesSlice'
+import { IssuesPageHeader } from './IssuesPageHeader.tsx'
+import { IssuesList } from './IssuesList.tsx'
+import { IssuePagination, OnPageChangeCallback } from './IssuePagination.tsx'
+import { fetchIssues } from './issuesSlice.ts'
 
 interface ILProps {
   org: string

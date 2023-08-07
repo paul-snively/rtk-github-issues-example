@@ -1,7 +1,7 @@
 import React from 'react'
 import classnames from 'classnames'
 
-import { Label } from 'api/githubAPI'
+import { Label } from '../api/githubAPI.tsx'
 
 interface IssueLabelsProps {
   labels: Label[]
