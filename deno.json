@@ -1,11 +1,38 @@
 {
-  "compilerOptions": {
-    "lib": ["dom"]
+  "imports": {
+    "react": "https://esm.sh/react@18.2.0?dev",
+    "react/": "https://esm.sh/react@18.2.0/",
+    "react-redux": "https://esm.sh/react-redux@8.1.2?dev",
+    "@reduxjs/toolkit": "https://esm.sh/@reduxjs/toolkit@1.9.5?dev",
+    "redux-thunk": "https://esm.sh/redux-thunk@2.4.2?dev",
+    "redux-markdown": "https://esm.sh/redux-markdown@8.0.7?dev",
+    "react-dom": "https://esm.sh/react-dom@18.2.0",
+    "react-dom/server": "https://esm.sh/react-dom@18.2.0/server?dev",
+    "react-dom/client": "https://esm.sh/react-dom@18.2.0/client?dev",
+
+    "react-router-dom": "https://esm.sh/react-router-dom@6.3.0?external=react",
+    "react-router-dom/server": "https://esm.sh/react-router-dom@6.3.0/server?external=react",
+
+    "parse-link-header": "https://esm.sh/parse-link-header@2.0.0?dev",
+    "axios": "https://esm.sh/axios@1.4.0?dev",
+
+    "ultra/": "https://deno.land/x/ultra@v2.3.6/"
   },
   "tasks": {
-    "dev": "deno run -A --node-modules-dir npm:vite",
-    "build": "deno run -A --node-modules-dir npm:vite build",
-    "preview": "deno run -A --node-modules-dir npm:vite preview",
-    "serve": "deno run --allow-net --allow-read https://deno.land/std@0.157.0/http/file_server.ts dist/"
+    "dev": "deno run -A --no-check --watch ./server.tsx",
+    "test": "deno test --allow-all",
+    "build": "deno run -A ./build.ts",
+    "start": "ULTRA_MODE=production deno run -A --no-remote ./server.js"
+  },
+  "compilerOptions": {
+    "jsx": "react-jsxdev",
+    "jsxImportSource": "react",
+    "lib": ["dom", "dom.iterable", "dom.asynciterable", "deno.ns"]
+  },
+  "fmt": {
+    "files": { "exclude": [".ultra"] }
+  },
+  "lint": {
+    "files": { "exclude": [".ultra"] }
   }
 }

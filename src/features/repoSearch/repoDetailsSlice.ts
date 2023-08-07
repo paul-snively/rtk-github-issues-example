@@ -1,8 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
-import { AppThunk } from 'app/store'
+import { AppThunk } from '../../app/store.ts'
 
-import { RepoDetails, getRepoDetails } from 'api/githubAPI'
+import { RepoDetails, getRepoDetails } from '../../api/githubAPI.tsx'
 
 interface RepoDetailsState {
   openIssuesCount: number

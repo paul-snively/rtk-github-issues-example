@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
-import { Comment, getComments, Issue } from 'api/githubAPI'
-import { AppThunk } from 'app/store'
+import { Comment, getComments, Issue } from '../../api/githubAPI.tsx'
+import { AppThunk } from '../../app/store.ts'
 
 interface CommentsState {
   commentsByIssue: Record<number, Comment[] | undefined>

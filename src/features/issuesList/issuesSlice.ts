@@ -1,8 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { Links } from 'parse-link-header'
 
-import { Issue, IssuesResult, getIssue, getIssues } from 'api/githubAPI'
-import { AppThunk } from 'app/store'
+import { Issue, IssuesResult, getIssue, getIssues } from '../../api/githubAPI.tsx'
+import { AppThunk } from '../../app/store.ts'
 
 interface IssuesState {
   issuesByNumber: Record<number, Issue>

@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
 
-import { insertMentionLinks } from 'utils/stringUtils'
-import { Issue, Comment } from 'api/githubAPI'
-import { UserWithAvatar } from 'components/UserWithAvatar'
+import { insertMentionLinks } from '../../utils/stringUtils.ts'
+import { Issue, Comment } from '../../api/githubAPI.tsx'
+import { UserWithAvatar } from '../../components/UserWithAvatar.tsx'
 
 import styles from './IssueComments.module.css'
 

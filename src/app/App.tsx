@@ -1,17 +1,17 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
-import { RootState } from './rootReducer'
+import { RootState } from './rootReducer.ts'
 
-import { RepoSearchForm } from 'features/repoSearch/RepoSearchForm'
-import { IssuesListPage } from 'features/issuesList/IssuesListPage'
-import { IssueDetailsPage } from 'features/issueDetails/IssueDetailsPage'
+import { RepoSearchForm } from '../features/repoSearch/RepoSearchForm.tsx'
+import { IssuesListPage } from '../features/issuesList/IssuesListPage.tsx'
+import { IssueDetailsPage } from '../features/issueDetails/IssueDetailsPage.tsx'
 
 import {
   displayRepo,
   setCurrentDisplayType,
   setCurrentPage
-} from 'features/issuesDisplay/issuesDisplaySlice'
+} from '../features/issuesDisplay/issuesDisplaySlice.ts'
 
 import './App.css'
 
