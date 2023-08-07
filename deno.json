@@ -5,10 +5,10 @@
     "react-redux": "https://esm.sh/react-redux@8.1.2?dev",
     "@reduxjs/toolkit": "https://esm.sh/@reduxjs/toolkit@1.9.5?dev",
     "redux-thunk": "https://esm.sh/redux-thunk@2.4.2?dev",
-    "redux-markdown": "https://esm.sh/redux-markdown@8.0.7?dev",
     "react-dom": "https://esm.sh/react-dom@18.2.0",
     "react-dom/server": "https://esm.sh/react-dom@18.2.0/server?dev",
     "react-dom/client": "https://esm.sh/react-dom@18.2.0/client?dev",
+    "react-markdown": "https://esm.sh/react-markdown@8.0.7?dev",
 
     "react-router-dom": "https://esm.sh/react-router-dom@6.3.0?external=react",
     "react-router-dom/server": "https://esm.sh/react-router-dom@6.3.0/server?external=react",
