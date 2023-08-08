@@ -4,9 +4,7 @@ import classnames from 'classnames'
 import { Issue } from '../../api/githubAPI.tsx'
 import { UserWithAvatar } from '../../components/UserWithAvatar.tsx'
 
-import useAsset from 'ultra/hooks/use-asset.js'
-
-<link rel="stylesheet" href={useAsset('IssueMeta.module.css')} />
+<link rel="stylesheet" href="IssueMeta.module.css" />
 
 interface IssueProps {
   issue: Issue

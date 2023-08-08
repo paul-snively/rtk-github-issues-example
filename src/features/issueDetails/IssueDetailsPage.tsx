@@ -12,9 +12,7 @@ import { IssueMeta } from './IssueMeta.tsx'
 import { IssueComments } from './IssueComments.tsx'
 import { fetchComments } from './commentsSlice.ts'
 
-import useAsset from 'ultra/hooks/use-asset.js'
-
-<link rel="stylesheet" href={useAsset('IssueDetailsPage.module.css')} />
+<link rel="stylesheet" href="IssueDetailsPage.module.css" />
 
 interface IDProps {
   org: string

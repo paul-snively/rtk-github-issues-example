@@ -1,10 +1,9 @@
 import React from 'react'
-import useAsset from 'ultra/hooks/use-asset.js'
 
 import { Issue } from '../../api/githubAPI.tsx'
 import { IssueListItem } from './IssueListItem.tsx'
 
-<link rel="stylesheet" href={useAsset('IssuesList.module.css')} />
+<link rel="stylesheet" href="IssuesList.module.css" />
 
 interface Props {
   issues: Issue[]

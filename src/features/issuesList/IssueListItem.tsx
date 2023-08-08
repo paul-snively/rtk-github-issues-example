@@ -1,5 +1,4 @@
 import React, { MouseEvent } from 'react'
-import useAsset from 'ultra/hooks/use-asset.js'
 
 import { Issue } from '../../api/githubAPI.tsx'
 import { shorten } from '../../utils/stringUtils.ts'
@@ -7,7 +6,7 @@ import { shorten } from '../../utils/stringUtils.ts'
 import { IssueLabels } from '../../components/IssueLabels.tsx'
 import { UserWithAvatar } from '../../components/UserWithAvatar.tsx'
 
-<link rel="stylesheet" href={useAsset('IssueListItem.module.css')} />
+<link rel="stylesheet" href="IssueListItem.module.css" />
 
 type Props = Issue & {
   showIssueComments: (issueId: number) => void

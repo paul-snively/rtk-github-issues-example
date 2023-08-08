@@ -1,12 +1,12 @@
 import { serve } from "https://deno.land/std@0.176.0/http/server.ts";
 import { type Context, createServer } from "ultra/server.ts";
-import App from "./src/app/App.tsx";
+import { render } from "./src/index.tsx";
 
 // React Router
 import { StaticRouter } from "react-router-dom/server";
 
 const server = await createServer({
-  importMapPath: import.meta.resolve("./importMap.json"),
+  importMapPath: import.meta.resolve("./deno.json"),
   browserEntrypoint: import.meta.resolve("./client.tsx"),
 });
 
@@ -15,7 +15,7 @@ function ServerApp({ context }: { context: Context }) {
 
   return (
     <StaticRouter location={new URL(context.req.url).pathname}>
-      <App />
+      {render()}
     </StaticRouter>
   );
 }

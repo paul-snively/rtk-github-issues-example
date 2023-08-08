@@ -1,9 +1,8 @@
 import React from 'react'
 import classnames from 'classnames'
 import Paginate, { ReactPaginateProps } from 'react-paginate'
-import useAsset from 'ultra/hooks/use-asset.js'
 
-<link rel="stylesheet" href={useAsset('IssuePagination.module.css')} />
+<link rel="stylesheet" href="IssuePagination.module.css" />
 
 export type OnPageChangeCallback = ReactPaginateProps['onPageChange']
 

@@ -5,9 +5,7 @@ import { insertMentionLinks } from '../../utils/stringUtils.ts'
 import { Issue, Comment } from '../../api/githubAPI.tsx'
 import { UserWithAvatar } from '../../components/UserWithAvatar.tsx'
 
-import useAsset from 'ultra/hooks/use-asset.js'
-
-<link rel="stylesheet" href={useAsset('IssueComments.module.css')} />
+<link rel="stylesheet" href="IssueComments.module.css" />
 
 interface ICLProps {
   issue: Issue
