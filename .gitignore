@@ -10,6 +10,7 @@
 
 # production
 /build
+.ultra
 
 # Visual Studio Code
 .vscode
