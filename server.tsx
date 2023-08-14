@@ -9,7 +9,7 @@ import store from './src/app/store.ts'
 import { StaticRouter } from "react-router-dom/server";
 
 const server = await createServer({
-  importMapPath: import.meta.resolve("./deno.json"),
+  importMapPath: import.meta.resolve("./importMap.json"),
   browserEntrypoint: import.meta.resolve("./client.tsx"),
 });
 
