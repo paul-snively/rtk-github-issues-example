@@ -17,8 +17,9 @@
     "parse-link-header": "https://esm.sh/parse-link-header@2.0.0?dev",
     "axios": "https://esm.sh/axios@1.4.0?dev",
 
-    "ultra/": "https://deno.land/x/ultra@v2.3.6/",
-    "classnames": "npm:classnames@^2.3.2"
+    "classnames": "npm:classnames@^2.3.2",
+
+    "ultra/": "https://deno.land/x/ultra@v2.3.6/"
   },
   "tasks": {
     "dev": "deno run -A --no-check --watch ./server.tsx",
@@ -28,7 +29,7 @@
   },
   "compilerOptions": {
     "jsx": "react-jsxdev",
-    "jsxImportSource": "react",
+    "jsxImportSource": "https://esm.sh/react",
     "lib": ["dom", "dom.iterable", "dom.asynciterable", "deno.ns"]
   },
   "fmt": {

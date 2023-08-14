@@ -18,7 +18,7 @@ export const IssuePagination = ({
   onPageChange
 }: Props) => {
   return (
-    <div className={classnames('issuesPagination', styles.pagination)}>
+    <div className={classnames('issuesPagination', 'pagination')}>
       <Paginate
         forcePage={currentPage}
         pageCount={pageCount}

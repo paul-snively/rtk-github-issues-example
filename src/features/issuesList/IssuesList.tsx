@@ -17,5 +17,5 @@ export const IssuesList = ({ issues, showIssueComments }: Props) => {
     </li>
   ))
 
-  return <ul className={styles.issuesList}>{renderedIssues}</ul>
+  return <ul className='issuesList'>{renderedIssues}</ul>
 }
