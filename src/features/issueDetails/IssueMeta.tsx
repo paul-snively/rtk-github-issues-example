@@ -12,8 +12,8 @@ interface IssueProps {
 
 const IssueState = ({ issue: { state } }: IssueProps) => (
   <span
-    className={classnames('issue-detail__state', styles.issueState, {
-      [styles.open]: state === 'open'
+    className={classnames('issue-detail__state', 'issueState', {
+      ['open']: state === 'open'
     })}
   >
     {state}
@@ -21,14 +21,14 @@ const IssueState = ({ issue: { state } }: IssueProps) => (
 )
 
 const IssueNumber = ({ issue }: IssueProps) => (
-  <span className={classnames('issue-detail__number', styles.number)}>
+  <span className={classnames('issue-detail__number', 'number')}>
     #{issue.number}
   </span>
 )
 
 export const IssueMeta = ({ issue }: IssueProps) => {
   return (
-    <div className={classnames('issue-detail__meta', styles.meta)}>
+    <div className={classnames('issue-detail__meta', 'meta')}>
       <IssueNumber issue={issue} />
       <IssueState issue={issue} />
       <UserWithAvatar user={issue.user} orientation="horizontal" />

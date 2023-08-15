@@ -95,19 +95,19 @@ export const IssueDetailsPage = ({
     }
 
     content = (
-      <div className={classnames('issueDetailsPage', styles.issueDetailsPage)}>
+      <div className={classnames('issueDetailsPage', 'issueDetailsPage')}>
         <h1 className="issue-detail__title">{issue.title}</h1>
         {backToIssueListButton}
         <IssueMeta issue={issue} />
-        <IssueLabels labels={issue.labels} className={styles.issueLabels} />
-        <hr className={styles.divider} />
-        <div className={styles.summary}>
+        <IssueLabels labels={issue.labels} className='issueLabels' />
+        <hr className='divider' />
+        <div className='summary'>
           <ReactMarkdown
             className={'testing'}
             source={insertMentionLinks(issue.body)}
           />
         </div>
-        <hr className={styles.divider} />
+        <hr className='divider' />
         <ul>{renderedComments}</ul>
       </div>
     )

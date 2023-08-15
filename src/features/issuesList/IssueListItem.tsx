@@ -30,16 +30,16 @@ export const IssueListItem = ({
   const pluralizedComments = comments === 1 ? 'comment' : 'comments'
 
   return (
-    <div className={styles.issue}>
+    <div className='issue'>
       <UserWithAvatar user={user} />
       <div className="issue__body">
         <a href="#comments" onClick={onIssueClicked}>
-          <span className={styles.number}>#{number}</span>
-          <span className={styles.title}>{title}</span>
+          <span className='number'>#{number}</span>
+          <span className='title'>{title}</span>
         </a>
         <br /> ({comments} {pluralizedComments})
         <p className="issue__summary">{shorten(body)}</p>
-        <IssueLabels labels={labels} className={styles.label} />
+        <IssueLabels labels={labels} className='label' />
       </div>
     </div>
   )

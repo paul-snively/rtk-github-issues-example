@@ -18,13 +18,13 @@ export const UserWithAvatar = ({
   link = true,
   classes = {}
 }: UserAvatarProps) => {
-  const linkClassnames = classnames(styles.issueUser, {
-    [styles.vertical]: orientation === 'vertical',
-    [styles.horizontal]: orientation === 'horizontal'
+  const linkClassnames = classnames('issueUser', {
+    ['vertical']: orientation === 'vertical',
+    ['horizontal']: orientation === 'horizontal'
   })
 
-  const avatarClassnames = classnames(styles.avatar, classes.avatar)
-  const usernameClassnames = classnames(styles.username, classes.username)
+  const avatarClassnames = classnames('avatar', classes.avatar)
+  const usernameClassnames = classnames('username', classes.username)
 
   const contents = (
     <React.Fragment>

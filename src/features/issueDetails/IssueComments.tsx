@@ -18,14 +18,14 @@ interface ICProps {
 
 function IssueComment({ comment }: ICProps) {
   return (
-    <div className={styles.comment}>
+    <div className='comment'>
       <UserWithAvatar
         user={comment.user}
-        classes={{ avatar: styles.avatar, username: styles.username }}
+        classes={{ avatar: 'avatar', username: 'username' }}
         orientation="horizontal"
       />
 
-      <div className={styles.body}>
+      <div className='body'>
         <ReactMarkdown
           className="markdown"
           source={insertMentionLinks(comment.body)}
@@ -50,7 +50,7 @@ export function IssueComments({ comments = [], issue }: ICLProps) {
 
   // Comments are loaded
   return (
-    <ul className={styles.commentsList}>
+    <ul className='commentsList'>
       {comments.map(comment => (
         <li key={comment.id}>
           <IssueComment comment={comment} />
