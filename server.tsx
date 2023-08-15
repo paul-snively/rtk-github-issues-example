@@ -2,6 +2,10 @@ import { serve } from "https://deno.land/std@0.176.0/http/server.ts";
 import { type Context, createServer } from "ultra/server.ts";
 import App from "./src/app/App.tsx";
 
+import { Provider } from 'react-redux';
+
+import store from './src/app/store.ts';
+
 // React Router
 import { StaticRouter } from "react-router-dom/server";
 
@@ -15,7 +19,9 @@ function ServerApp({ context }: { context: Context }) {
 
   return (
     <StaticRouter location={new URL(context.req.url).pathname}>
-      <App/>
+      <Provider store={store}>
+        <App/>
+      </Provider>
     </StaticRouter>
   );
 }

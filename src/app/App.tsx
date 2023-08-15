@@ -1,7 +1,5 @@
 import React from 'react'
-import { Provider, useSelector, useDispatch } from 'react-redux'
-
-import store from './store.ts'
+import { useSelector, useDispatch } from 'react-redux'
 
 import { RootState } from './rootReducer.ts'
 
@@ -27,83 +25,81 @@ type CurrentDisplay =
     }
 
 const App: React.FC = () => {
+  const dispatch = useDispatch()
+
+  const { org, repo, displayType, page, issueId } = useSelector(
+    (state: RootState) => state.issuesDisplay
+  )
+
+  const setOrgAndRepo = (org: string, repo: string) => {
+    dispatch(displayRepo({ org, repo }))
+  }
+
+  const setJumpToPage = (page: number) => {
+    dispatch(setCurrentPage(page))
+  }
+
+  const showIssuesList = () => {
+    dispatch(setCurrentDisplayType({ displayType: 'issues' }))
+  }
+
+  const showIssueComments = (issueId: number) => {
+    dispatch(setCurrentDisplayType({ displayType: 'comments', issueId }))
+  }
+
+  let content
+
+  if (displayType === 'issues') {
+    content = (
+      <React.Fragment>
+        <RepoSearchForm
+          org={org}
+          repo={repo}
+          setOrgAndRepo={setOrgAndRepo}
+          setJumpToPage={setJumpToPage}
+        />
+        <IssuesListPage
+          org={org}
+          repo={repo}
+          page={page}
+          setJumpToPage={setJumpToPage}
+          showIssueComments={showIssueComments}
+        />
+      </React.Fragment>
+    )
+  } else if (issueId !== null) {
+    const key = `${org}/${repo}/${issueId}`
+    content = (
+      <IssueDetailsPage
+        key={key}
+        org={org}
+        repo={repo}
+        issueId={issueId}
+        showIssuesList={showIssuesList}
+      />
+    )
+  }
+
   return (
-    <Provider store={store}>
-      const dispatch = useDispatch()
-
-      const { org, repo, displayType, page, issueId } = useSelector(
-        (state: RootState) => state.issuesDisplay
-      )
-
-      const setOrgAndRepo = (org: string, repo: string) => {
-        dispatch(displayRepo({ org, repo }))
-      }
-
-      const setJumpToPage = (page: number) => {
-        dispatch(setCurrentPage(page))
-      }
-
-      const showIssuesList = () => {
-        dispatch(setCurrentDisplayType({ displayType: 'issues' }))
-      }
-
-      const showIssueComments = (issueId: number) => {
-        dispatch(setCurrentDisplayType({ displayType: 'comments', issueId }))
-      }
-
-      let content
-
-      if (displayType === 'issues') {
-        content = (
-          <React.Fragment>
-            <RepoSearchForm
-              org={org}
-              repo={repo}
-              setOrgAndRepo={setOrgAndRepo}
-              setJumpToPage={setJumpToPage}
-            />
-            <IssuesListPage
-              org={org}
-              repo={repo}
-              page={page}
-              setJumpToPage={setJumpToPage}
-              showIssueComments={showIssueComments}
-            />
-          </React.Fragment>
-        )
-      } else if (issueId !== null) {
-        const key = `${org}/${repo}/${issueId}`
-        content = (
-          <IssueDetailsPage
-            key={key}
-            org={org}
-            repo={repo}
-            issueId={issueId}
-            showIssuesList={showIssuesList}
-          />
-        )
-      }
-
-      <html lang="en">
-        <head>
-          <meta charSet="utf-8" />
-          <link rel="shortcut icon" href="/favicon.ico" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <meta name="theme-color" content="#000000" />
-          <meta
-            name="description"
-            content="Web site created using create-react-app"
-          />
-          <link rel="apple-touch-icon" href="logo192.png" />
-          <link rel="manifest" href="/manifest.json" />
-          <title>React App</title>
-        </head>
-        <body>
-          <noscript>You need to enable JavaScript to run this app.</noscript>
-          <div className='App'>{content}</div>
-        </body>
-      </html>
-    </Provider>
+    <html lang="en">
+      <head>
+        <meta charSet="utf-8" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#000000" />
+        <meta
+          name="description"
+          content="Web site created using create-react-app"
+        />
+        <link rel="apple-touch-icon" href="logo192.png" />
+        <link rel="manifest" href="/manifest.json" />
+        <title>React App</title>
+      </head>
+      <body>
+        <noscript>You need to enable JavaScript to run this app.</noscript>
+        <div className='App'>{content}</div>
+      </body>
+    </html>
   )
 }
 
