@@ -97,7 +97,11 @@ const App: React.FC = () => {
       </head>
       <body>
         <noscript>You need to enable JavaScript to run this app.</noscript>
-        <div className='App'>{content}</div>
+        <div className='root'>
+          <div className='App'>
+            {content}
+          </div>
+        </div>
       </body>
     </html>
   )
