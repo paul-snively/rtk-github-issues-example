@@ -38,7 +38,7 @@ export const IssueListItem = ({
           <span className='title'>{title}</span>
         </a>
         <br /> ({comments} {pluralizedComments})
-        <p className="issue__summary">{shorten(body)}</p>
+        <p className="issue__summary">{body && shorten(body)}</p>
         <IssueLabels labels={labels} className='label' />
       </div>
     </div>
