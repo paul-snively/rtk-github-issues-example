@@ -10,6 +10,7 @@
     "react-dom/client": "https://esm.sh/react-dom@18.2.0/client?dev",
     "react-markdown": "https://esm.sh/react-markdown@8.0.7?dev",
     "react-paginate": "https://esm.sh/react-paginate@8.2.0?dev",
+    "react-helmet-async": "https://esm.sh/react-helmet-async@1.3.0?dev",
 
     "react-router-dom": "https://esm.sh/react-router-dom@6.3.0?external=react",
     "react-router-dom/server": "https://esm.sh/react-router-dom@6.3.0/server?external=react",

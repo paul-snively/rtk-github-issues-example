@@ -1,3 +1,4 @@
+import { HelmetProvider } from 'react-helmet-async';
 import hydrate from "ultra/hydrate.js";
 import App from "./src/app/App.tsx";
 
@@ -10,11 +11,13 @@ import { BrowserRouter } from "react-router-dom";
 
 function ClientApp() {
   return (
-    <BrowserRouter>
-      <Provider store={store}>
-        <App />
-      </Provider>
-    </BrowserRouter>
+    <HelmetProvider>
+      <BrowserRouter>
+        <Provider store={store}>
+          <App/>
+        </Provider>
+      </BrowserRouter>
+    </HelmetProvider>
   );
 }
 

@@ -1,3 +1,4 @@
+import { HelmetProvider } from 'react-helmet-async';
 import { serve } from "https://deno.land/std@0.176.0/http/server.ts";
 import { type Context, createServer } from "ultra/server.ts";
 import App from "./src/app/App.tsx";
@@ -9,6 +10,8 @@ import store from './src/app/store.ts';
 // React Router
 import { StaticRouter } from "react-router-dom/server";
 
+const helmetContext = {};
+
 const server = await createServer({
   importMapPath: import.meta.resolve("./importMap.json"),
   browserEntrypoint: import.meta.resolve("./client.tsx"),
@@ -18,11 +21,13 @@ function ServerApp({ context }: { context: Context }) {
   const requestUrl = new URL(context.req.url);
 
   return (
-    <StaticRouter location={new URL(context.req.url).pathname}>
-      <Provider store={store}>
-        <App/>
-      </Provider>
-    </StaticRouter>
+    <HelmetProvider context={helmetContext}>
+      <StaticRouter location={new URL(context.req.url).pathname}>
+        <Provider store={store}>
+          <App/>
+        </Provider>
+      </StaticRouter>
+    </HelmetProvider>
   );
 }
 
