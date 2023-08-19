@@ -21,6 +21,7 @@ export const IssuePagination = ({
   return (
     <div className={classnames('issuesPagination', 'pagination')}>
       <Helmet>
+        <link rel="stylesheet" href={useAsset("/IssuePagination.css")} />
         <link rel="stylesheet" href={useAsset("/IssuePagination.module.css")} />
       </Helmet>
       <Paginate
