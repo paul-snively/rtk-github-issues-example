@@ -1,10 +1,12 @@
 import React from 'react'
 import classnames from 'classnames'
 
+import useAsset from 'ultra/hooks/use-asset.js'
+import { Helmet } from 'react-helmet-async'
+
 import { Issue } from '../../api/githubAPI.tsx'
 import { UserWithAvatar } from '../../components/UserWithAvatar.tsx'
 
-<link rel="stylesheet" href="IssueMeta.module.css" />
 
 interface IssueProps {
   issue: Issue
@@ -29,6 +31,9 @@ const IssueNumber = ({ issue }: IssueProps) => (
 export const IssueMeta = ({ issue }: IssueProps) => {
   return (
     <div className={classnames('issue-detail__meta', 'meta')}>
+      <Helmet>
+        <link rel="stylesheet" href={useAsset("/IssueMeta.module.css")} />
+      </Helmet>
       <IssueNumber issue={issue} />
       <IssueState issue={issue} />
       <UserWithAvatar user={issue.user} orientation="horizontal" />

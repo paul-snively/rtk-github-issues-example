@@ -2,7 +2,8 @@ import React from 'react'
 import classnames from 'classnames'
 import Paginate, { ReactPaginateProps } from 'react-paginate'
 
-<link rel="stylesheet" href="IssuePagination.module.css" />
+import useAsset from 'ultra/hooks/use-asset.js'
+import { Helmet } from 'react-helmet-async'
 
 export type OnPageChangeCallback = ReactPaginateProps['onPageChange']
 
@@ -19,6 +20,9 @@ export const IssuePagination = ({
 }: Props) => {
   return (
     <div className={classnames('issuesPagination', 'pagination')}>
+      <Helmet>
+        <link rel="stylesheet" href={useAsset("/IssuePagination.module.css")} />
+      </Helmet>
       <Paginate
         forcePage={currentPage}
         pageCount={pageCount}

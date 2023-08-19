@@ -1,7 +1,7 @@
 import React, { useState, ChangeEvent } from 'react'
 
-<link rel="stylesheet" href="./pure-forms.css" />
-<link rel="stylesheet" href="./pure-buttons.css" />
+import useAsset from 'ultra/hooks/use-asset.js'
+import { Helmet } from 'react-helmet-async'
 
 interface Props {
   org: string
@@ -49,6 +49,10 @@ export const RepoSearchForm = ({
 
   return (
     <form className="pure-form">
+      <Helmet>
+        <link rel="stylesheet" href={useAsset("/pure-forms.css")} />
+        <link rel="stylesheet" href={useAsset("/pure-buttons.css")} />
+      </Helmet>
       <div>
         <label htmlFor="org" style={{ marginRight: 5 }}>
           Org:

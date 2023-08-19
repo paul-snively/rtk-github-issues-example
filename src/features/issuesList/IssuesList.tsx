@@ -1,5 +1,8 @@
 import React from 'react'
 
+import useAsset from 'ultra/hooks/use-asset.js'
+import { Helmet } from 'react-helmet-async'
+
 import { Issue } from '../../api/githubAPI.tsx'
 import { IssueListItem } from './IssueListItem.tsx'
 
@@ -17,5 +20,10 @@ export const IssuesList = ({ issues, showIssueComments }: Props) => {
     </li>
   ))
 
-  return <ul className='issuesList'>{renderedIssues}</ul>
+  return <ul className='issuesList'>
+    <Helmet>
+      <link rel="stylesheet" href={useAsset("/IssuePagination.module.css")} />
+    </Helmet>
+    {renderedIssues}
+  </ul>
 }

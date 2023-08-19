@@ -3,6 +3,9 @@ import { useSelector, useDispatch, shallowEqual } from 'react-redux'
 import ReactMarkdown from 'react-markdown'
 import classnames from 'classnames'
 
+import useAsset from 'ultra/hooks/use-asset.js'
+import { Helmet } from 'react-helmet-async'
+
 import { insertMentionLinks } from '../../utils/stringUtils.ts'
 import { IssueLabels } from '../../components/IssueLabels.tsx'
 import { RootState } from '../../app/rootReducer.ts'
@@ -12,7 +15,6 @@ import { IssueMeta } from './IssueMeta.tsx'
 import { IssueComments } from './IssueComments.tsx'
 import { fetchComments } from './commentsSlice.ts'
 
-<link rel="stylesheet" href="IssueDetailsPage.module.css" />
 
 interface IDProps {
   org: string
@@ -113,5 +115,11 @@ export const IssueDetailsPage = ({
     )
   }
 
-  return <div>{content}</div>
+  return <div>
+    <Helmet>
+      <link rel="stylesheet" href={useAsset("/IssueDetailsPage.module.css")} />
+    </Helmet>
+
+    {content}
+  </div>
 }

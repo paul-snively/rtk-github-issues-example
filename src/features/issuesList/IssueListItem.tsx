@@ -1,12 +1,14 @@
 import React, { MouseEvent } from 'react'
 
+import useAsset from 'ultra/hooks/use-asset.js'
+import { Helmet } from 'react-helmet-async'
+
 import { Issue } from '../../api/githubAPI.tsx'
 import { shorten } from '../../utils/stringUtils.ts'
 
 import { IssueLabels } from '../../components/IssueLabels.tsx'
 import { UserWithAvatar } from '../../components/UserWithAvatar.tsx'
 
-<link rel="stylesheet" href="IssueListItem.module.css" />
 
 type Props = Issue & {
   showIssueComments: (issueId: number) => void
@@ -31,6 +33,9 @@ export const IssueListItem = ({
 
   return (
     <div className='issue'>
+      <Helmet>
+        <link rel="stylesheet" href={useAsset("/IssueListItem.module.css")} />
+      </Helmet>
       <UserWithAvatar user={user} />
       <div className="issue__body">
         <a href="#comments" onClick={onIssueClicked}>
