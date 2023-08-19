@@ -6,8 +6,6 @@ import { Helmet } from 'react-helmet-async'
 import { Issue } from '../../api/githubAPI.tsx'
 import { IssueListItem } from './IssueListItem.tsx'
 
-<link rel="stylesheet" href="IssuesList.module.css" />
-
 interface Props {
   issues: Issue[]
   showIssueComments: (issueId: number) => void
@@ -22,7 +20,7 @@ export const IssuesList = ({ issues, showIssueComments }: Props) => {
 
   return <ul className='issuesList'>
     <Helmet>
-      <link rel="stylesheet" href={useAsset("/IssuePagination.module.css")} />
+      <link rel="stylesheet" href={useAsset("/IssuesList.module.css")} />
     </Helmet>
     {renderedIssues}
   </ul>
