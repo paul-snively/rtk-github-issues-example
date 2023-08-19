@@ -1,6 +1,8 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
+import useAsset from 'ultra/hooks/use-asset.js'
+
 import { RootState } from './rootReducer.ts'
 
 import { RepoSearchForm } from '../features/repoSearch/RepoSearchForm.tsx'
@@ -12,8 +14,6 @@ import {
   setCurrentDisplayType,
   setCurrentPage
 } from '../features/issuesDisplay/issuesDisplaySlice.ts'
-
-<link rel="stylesheet" href="./App.css" />
 
 type CurrentDisplay =
   | {
@@ -93,6 +93,8 @@ const App: React.FC = () => {
         />
         <link rel="apple-touch-icon" href="logo192.png" />
         <link rel="manifest" href="/manifest.json" />
+        <link rel="stylesheet" href={useAsset("/index.css")} />
+        <link rel="stylesheet" href={useAsset("/App.css")} />
         <title>React App</title>
       </head>
       <body>
